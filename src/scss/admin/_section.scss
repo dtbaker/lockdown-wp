@@ -1,13 +1,76 @@
 
 .lockdown-wp__option {
-  border: 1px solid #EFEFEF;
   border-radius: 4px;
-  padding: 10px;
+  padding: 10px 0 20px;
   &-setting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:hover .lockdown-wp__option-labelcheck {
+      transform: scale(1.15);
+    }
   }
   &-check {
+    position: absolute;
+    opacity: 0;
+
+    &:checked + .lockdown-wp__option-labelcheck svg path {
+      stroke-dashoffset: 0;
+    }
   }
-  &-label {
+  &-labelcheck {
+    display: block;
+    border: 2px solid #333;
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    svg {
+      pointer-events: none;
+      path {
+        fill: none;
+        stroke: #333;
+        stroke-width: 4px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 101;
+        transition: all 150ms cubic-bezier(1, 0, .37, .91);
+      }
+    }
+  }
+  &-labeltext {
+    margin-left: 12px;
+    font-size: 17px;
+    min-width: 200px
+  }
+  &-labeldescription {
+    margin-left: 30px;
+    font-size: 17px;
+    padding-left: 20px;
+    flex: 1;
+    position: relative;
+    &:before {
+      display: inline;
+      font-family: dashicons;
+      text-decoration: inherit;
+      font-weight: 400;
+      font-style: normal;
+      content: "\f223";
+      left: 0;
+      top: 2px;
+      position: absolute;
+    }
+  }
+  &-toggle {
+    margin-left: 20px;
+    label {
+      color: #0073aa;
+      text-decoration: underline;
+    }
   }
   h4,
   p {
@@ -16,18 +79,34 @@
   }
 
   &-meta {
-
+    margin: 0 0 0 42px;
+    display: none;
+    padding: 10px;
+  }
+  &-toggler {
+    display: none !important;
+  }
+  &-toggler:checked + .lockdown-wp__option-meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
   &-feature {
-    width: 100%;
+    background: #FFF;
+    border-radius: 4px;
+    padding: 15px;
+    max-width: 400px;
+    margin-right: 0;
     display: flex;
     flex-direction: row;
     &--pro {
       width: 50%;
+      padding: 10px;
 
     }
     &--con {
       width: 50%;
+      padding: 10px;
 
     }
   }
