@@ -1,0 +1,44 @@
+.lockdown-wp__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto auto;
+}
+
+.lockdown-wp__wrapper * {
+  box-sizing: border-box;
+}
+
+.lockdown-wp__header {
+  background-color: #FFFFFF;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+}
+
+.lockdown-wp__header-logo {
+  padding: 16px 30px 13px 20px;
+  img {
+    height: 22px;
+  }
+  a {
+    &:active,
+    &:focus {
+      outline: 0;
+      border: none;
+      -moz-outline-style: none;
+      box-shadow: none;
+    }
+  }
+  @media screen and (max-width: 782px) {
+    max-width: 61px;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+}
+
+.lockdown-wp__content {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #f8f9f9;
+}
+

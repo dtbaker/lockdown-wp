@@ -1,0 +1,34 @@
+
+.lockdown-wp__option {
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  padding: 10px;
+  &-setting {
+  }
+  &-check {
+  }
+  &-label {
+  }
+  h4,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-meta {
+
+  }
+  &-feature {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    &--pro {
+      width: 50%;
+
+    }
+    &--con {
+      width: 50%;
+
+    }
+  }
+}
